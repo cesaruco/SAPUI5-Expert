@@ -1,0 +1,17 @@
+{
+"Invoices": [
+    {
+        "ProductName": "Producto 1",
+        "Quantity": 1,
+        "ExtendedPrice": 87.2000,
+        "Status": "A"
+    },
+    {
+        "ProductName": "Producto 2",
+        "Quantity": 2,
+        "ExtendedPrice": 9.99999,
+        "Status": "B"
+
+    }
+]
+}

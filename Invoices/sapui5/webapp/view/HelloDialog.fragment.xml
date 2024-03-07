@@ -1,0 +1,10 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Dialog id="helloDialogButton" title="{/recipient/name}">
+    <content>
+     <core:Icon src="sap-icon://doc-attachment" size="8rem" />
+    </content>
+    <beginButton>
+        <Button text="{i18n>dialogClouseBut}" press=".onCloseDialog"></Button>
+    </beginButton>
+    </Dialog>
+</core:FragmentDefinition>
