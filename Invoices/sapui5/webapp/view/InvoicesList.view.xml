@@ -1,24 +1,30 @@
-<mvc:View controllerName="coa.sapui5.controller.InvoicesList"
+<mvc:View xmlns:launchpad="sap.ushell.ui.launchpad" controllerName="coa.sapui5.controller.InvoicesList"
           xmlns="sap.m"
           xmlns:mvc="sap.ui.core.mvc">
-    <List headerText="{i18n>invoiceListTitle}" 
+    <List id="invoiceList" 
+          headerText="{i18n>invoiceListTitle}" 
           class="sapUiResponsiveMargin" 
           width="auto" 
-          items="{invoices>/Invoices}">
+          items="{northwind>/Invoices}">
+          <headerToolbar>
+            <Toolbar>
+                <Title text="{i18n>invoiceListTitle}"></Title>
+                <ToolbarSpacer/>
+                <SearchField width="50%" search=".onFilterInvoices" >
+                </SearchField>
+            </Toolbar>
+          </headerToolbar>
         <items>
-            <ObjectListItem title="{invoices>Quantity}"
-                            number="{ parts : [ {path : 'invoices>ExtendedPrice'}, 
+            <ObjectListItem title="{northwind>ProductName}"
+                            number="{ parts : [ {path : 'northwind>ExtendedPrice'}, 
                                                 {path : 'currency>/usd'}],
                                     type: 'sap.ui.model.type.Currency',
                                     formatOptions: {
                                         showMeasure : false
                                     }}"
                             numberUnit="{currency>/usd}"
-                            numberState="{= ${invoices>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
-            <firstStatus>
-                <ObjectStatus text="{ path: 'invoices>Status',
-                                       formatter: '.formatter.invoiceStatus' }"></ObjectStatus>
-            </firstStatus>
+                            numberState="{= ${northwind>ExtendedPrice} > 50 ? 'Success' : 'Error'}">
+
             </ObjectListItem>            
         </items>
     </List>
